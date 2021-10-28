@@ -1,0 +1,4 @@
+FROM ibmcom/db2
+
+EXPOSE 50000 55000
+VOLUME /database

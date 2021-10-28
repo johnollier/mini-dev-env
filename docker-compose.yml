@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  db2community:
+    container_name: db2community
+    hostname: db2community
+    build: db2community 
+    ports:
+      - "50002:50000"
+      - "55002:55000"
+    env_file:
+      - db2community/env_list
+    privileged: true
+    mem_limit: 2GB
+  postgres13:
+    container_name: postgres13
+    build: postgres13 
+    ports:
+      - "5434:5432"
