@@ -8,7 +8,12 @@ RUN apt-get update && \
 
 # This user will be created as the superuser
 # PG* are for dev use - while in the container psql will just work (useful for the provisioning)
-ENV POSTGRES_USER=root \
- POSTGRES_PASSWORD=superroot \
- PGUSER=root \
- PGPASSWORD=superroot
+ENV POSTGRES_USER=root
+ENV POSTGRES_PASSWORD=superroot
+ENV PGUSER=root 
+ENV PGPASSWORD=superroot
+VOLUME [ "postgresql/data", "/var/lib/postgresql/data" ]
+
+ADD create-db.sh /docker-entrypoint-initdb.d
+
+CMD ["postgres", "-N", "200"]
