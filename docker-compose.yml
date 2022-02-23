@@ -16,6 +16,11 @@ services:
     build: postgres13 
     ports:
       - "5434:5432"
+  # postgres13orders:
+  #   container_name: postgres13orders
+  #   build: postgres13orders 
+  #   ports:
+  #     - "5434:5432"
   cadence:
     container_name: cadence
     image: ubercadence/server:0.14.1-auto-setup
@@ -37,188 +42,188 @@ services:
       - "5004:8088"
     depends_on:
       - cadence
-  application-adaptor-service:
-    container_name: application-adaptor-service
-    image: application-adaptor-service:latest
-    ports:
-     - 9092:8080
-  application-assurance-user-service:
-    container_name: application-assurance-user-service
-    image: application-assurance-user-service:latest
-    ports:
-     - 8095:8080
-  application-assurance-ux-service:
-    container_name: application-assurance-ux-service
-    image: application-assurance-ux-service:latest
-    ports:
-     - 8093:8080
-  application-processing-service:
-    container_name: application-processing-service
-    image: application-processing-service:latest
-    ports:
-     - 8081:8080
-  application-validator-service:
-    container_name: application-validator-service
-    image: application-validator-service:latest
-    ports:
-     - 8001:8080
-  casework-management-user-service:
-    container_name: casework-management-user-service
-    image: casework-management-user-service:latest
-    ports:
-     - 9104:8080
-  casework-user-service:
-    container_name: casework-user-service
-    image: casework-user-service:latest
-    ports:
-     - 9093:8080
-  casework-ux-service:
-    container_name: casework-ux-service
-    image: casework-ux-service:latest
-    ports:
-     - 9094:8080
-  completion-api-service:
-    container_name: completion-api-service
-    image: completion-api-service:latest
-    ports:
-     - 8084:8080
-  core-db-load-service:
-    container_name: core-db-load-service
-    image: core-db-load-service:latest
-    ports:
-     - 9001:8080
-  document-processor-service:
-    container_name: document-processor-service
-    image: document-processor-service:latest
-    ports:
-     - 8098:8080
-  document-store-service:
-    container_name: document-store-service
-    image: document-store-service:latest
-    ports:
-     - 8097:8080
-  event-publisher-service:
-    container_name: event-publisher-service
-    image: event-publisher-service:latest
-    ports:
-     - 8087:8080
-  failure-handler-service:
-    container_name: failure-handler-service
-    image: failure-handler-service:latest
-    ports:
-     - 8004:8080
-  identification-service:
-    container_name: identification-service
-    image: identification-service:latest
-    ports:
-     - 8099:8080
-  land-register-service:
-    container_name: land-register-service
-    image: land-register-service:latest
-    ports:
-     - 4780:8080
-  land-register-enhancement-service:
-    container_name: land-register-enhancement-service
-    image: land-register-enhancement-service:latest
-    ports:
-     - 7070:8080
-  lrpg-adapter-service:
-    container_name: lrpg-adapter-service
-    image: lrpg-adapter-service:latest
-    ports:
-     - 9096:8080
-  normalisation-service:
-    container_name: normalisation-service
-    image: normalisation-service:latest
-    ports:
-     - 8089:8080
-  obtain-api-service:
-    container_name: obtain-api-service
-    image: obtain-api-service:latest
-    ports:
-     - 8088:8080
-  orchestrator-service:
-    container_name: orchestrator-service
-    image: orchestrator-service:latest
-    ports:
-     - 8003:8080
-  order-processing-service:
-    container_name: order-processing-service
-    image: order-processing-service:latest
-    ports:
-     - 8077:8080
-  order-store-service:
-    container_name: order-store-service
-    image: order-store-service:latest
-    ports:
-     - 9002:8080
-  ppi-adapter-service:
-    container_name: ppi-adapter-service
-    image: ppi-adapter-service:latest
-    ports:
-     - 9095:8080
-  preprocessing-service:
-    container_name: preprocessing-service
-    image: preprocessing-service:latest
-    ports:
-     - 8096:8080
-  register-adapter-service:
-    container_name: register-adapter-service
-    image: register-adapter-service:latest
-    ports:
-     - 9081:8080
-  rejection-processing-service:
-    container_name: rejection-processing-service
-    image: rejection-processing-service:latest
-    ports:
-     - 8002:8080
-  suitability-service:
-    container_name: suitability-service
-    image: suitability-service:latest
-    ports:
-     - 8091:8080
-  template-validator-service:
-    container_name: template-validator-service
-    image: template-validator-service:latest
-    ports:
-     - 9003:8080
-  title-staging-service:
-    container_name: title-staging-service
-    image: title-staging-service:latest
-    ports:
-     - 8090:8080
-  title-update-service:
-    container_name: title-update-service
-    image: title-update-service:latest
-    ports:
-     - 8085:8080
-  title-validator-service:
-    container_name: title-validator-service
-    image: title-validator-service:latest
-    ports:
-     - 8086:8080
-  transaction-orchestrator-service:
-    container_name: transaction-orchestrator-service
-    image: transaction-orchestrator-service:latest
-    ports:
-     - 8006:8080
-  workflow-worker-implementation:
-    container_name: workflow-worker-implementation
-    image: workflow-worker-implementation:latest
-    ports:
-     - 8007:8080
-  working-register-adapter-service:
-    container_name: working-register-adapter-service
-    image: working-register-adapter-service:latest
-    ports:
-     - 8876:8080
-  # openldap:
-  #   image: bitnami/openldap
-  #  ports:
-  #      - '1389:1389'
-  #      - '1636:1636'
-  #   environment:
-  #      - LDAP_ADMIN_USERNAME=admin
-  #      - LDAP_ADMIN_PASSWORD=admin
-  #      - LDAP_USERS=user01
-  #      - LDAP_PASSWORDS=password1
+  # application-adaptor-service:
+  #   container_name: application-adaptor-service
+  #   image: application-adaptor-service:latest
+  #   ports:
+  #    - 9092:8080
+  # application-assurance-user-service:
+  #   container_name: application-assurance-user-service
+  #   image: application-assurance-user-service:latest
+  #   ports:
+  #    - 8095:8080
+  # application-assurance-ux-service:
+  #   container_name: application-assurance-ux-service
+  #   image: application-assurance-ux-service:latest
+  #   ports:
+  #    - 8093:8080
+  # application-processing-service:
+  #   container_name: application-processing-service
+  #   image: application-processing-service:latest
+  #   ports:
+  #    - 8081:8080
+  # application-validator-service:
+  #   container_name: application-validator-service
+  #   image: application-validator-service:latest
+  #   ports:
+  #    - 8001:8080
+  # casework-management-user-service:
+  #   container_name: casework-management-user-service
+  #   image: casework-management-user-service:latest
+  #   ports:
+  #    - 9104:8080
+  # casework-user-service:
+  #   container_name: casework-user-service
+  #   image: casework-user-service:latest
+  #   ports:
+  #    - 9093:8080
+  # casework-ux-service:
+  #   container_name: casework-ux-service
+  #   image: casework-ux-service:latest
+  #   ports:
+  #    - 9094:8080
+  # completion-api-service:
+  #   container_name: completion-api-service
+  #   image: completion-api-service:latest
+  #   ports:
+  #    - 8084:8080
+  # core-db-load-service:
+  #   container_name: core-db-load-service
+  #   image: core-db-load-service:latest
+  #   ports:
+  #    - 9001:8080
+  # document-processor-service:
+  #   container_name: document-processor-service
+  #   image: document-processor-service:latest
+  #   ports:
+  #    - 8098:8080
+  # document-store-service:
+  #   container_name: document-store-service
+  #   image: document-store-service:latest
+  #   ports:
+  #    - 8097:8080
+  # event-publisher-service:
+  #   container_name: event-publisher-service
+  #   image: event-publisher-service:latest
+  #   ports:
+  #    - 8087:8080
+  # failure-handler-service:
+  #   container_name: failure-handler-service
+  #   image: failure-handler-service:latest
+  #   ports:
+  #    - 8004:8080
+  # identification-service:
+  #   container_name: identification-service
+  #   image: identification-service:latest
+  #   ports:
+  #    - 8099:8080
+  # land-register-service:
+  #   container_name: land-register-service
+  #   image: land-register-service:latest
+  #   ports:
+  #    - 4780:8080
+  # land-register-enhancement-service:
+  #   container_name: land-register-enhancement-service
+  #   image: land-register-enhancement-service:latest
+  #   ports:
+  #    - 7070:8080
+  # lrpg-adapter-service:
+  #   container_name: lrpg-adapter-service
+  #   image: lrpg-adapter-service:latest
+  #   ports:
+  #    - 9096:8080
+  # normalisation-service:
+  #   container_name: normalisation-service
+  #   image: normalisation-service:latest
+  #   ports:
+  #    - 8089:8080
+  # obtain-api-service:
+  #   container_name: obtain-api-service
+  #   image: obtain-api-service:latest
+  #   ports:
+  #    - 8088:8080
+  # orchestrator-service:
+  #   container_name: orchestrator-service
+  #   image: orchestrator-service:latest
+  #   ports:
+  #    - 8003:8080
+  # order-processing-service:
+  #   container_name: order-processing-service
+  #   image: order-processing-service:latest
+  #   ports:
+  #    - 8077:8080
+  # order-store-service:
+  #   container_name: order-store-service
+  #   image: order-store-service:latest
+  #   ports:
+  #    - 9002:8080
+  # ppi-adapter-service:
+  #   container_name: ppi-adapter-service
+  #   image: ppi-adapter-service:latest
+  #   ports:
+  #    - 9095:8080
+  # preprocessing-service:
+  #   container_name: preprocessing-service
+  #   image: preprocessing-service:latest
+  #   ports:
+  #    - 8096:8080
+  # register-adapter-service:
+  #   container_name: register-adapter-service
+  #   image: register-adapter-service:latest
+  #   ports:
+  #    - 9081:8080
+  # rejection-processing-service:
+  #   container_name: rejection-processing-service
+  #   image: rejection-processing-service:latest
+  #   ports:
+  #    - 8002:8080
+  # suitability-service:
+  #   container_name: suitability-service
+  #   image: suitability-service:latest
+  #   ports:
+  #    - 8091:8080
+  # template-validator-service:
+  #   container_name: template-validator-service
+  #   image: template-validator-service:latest
+  #   ports:
+  #    - 9003:8080
+  # title-staging-service:
+  #   container_name: title-staging-service
+  #   image: title-staging-service:latest
+  #   ports:
+  #    - 8090:8080
+  # title-update-service:
+  #   container_name: title-update-service
+  #   image: title-update-service:latest
+  #   ports:
+  #    - 8085:8080
+  # title-validator-service:
+  #   container_name: title-validator-service
+  #   image: title-validator-service:latest
+  #   ports:
+  #    - 8086:8080
+  # transaction-orchestrator-service:
+  #   container_name: transaction-orchestrator-service
+  #   image: transaction-orchestrator-service:latest
+  #   ports:
+  #    - 8006:8080
+  # workflow-worker-implementation:
+  #   container_name: workflow-worker-implementation
+  #   image: workflow-worker-implementation:latest
+  #   ports:
+  #    - 8007:8080
+  # working-register-adapter-service:
+  #   container_name: working-register-adapter-service
+  #   image: working-register-adapter-service:latest
+  #   ports:
+  #    - 8876:8080
+  # # openldap:
+  # #   image: bitnami/openldap
+  # #  ports:
+  # #      - '1389:1389'
+  # #      - '1636:1636'
+  # #   environment:
+  # #      - LDAP_ADMIN_USERNAME=admin
+  # #      - LDAP_ADMIN_PASSWORD=admin
+  # #      - LDAP_USERS=user01
+  # #      - LDAP_PASSWORDS=password1
