@@ -2,7 +2,6 @@ version: '3.7'
 services:
   db2community:
     container_name: db2community
-    hostname: db2community
     build: db2community 
     ports:
       - "50002:50000"
