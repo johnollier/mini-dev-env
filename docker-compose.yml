@@ -41,3 +41,9 @@ services:
       - "5004:8088"
     depends_on:
       - cadence
+  rabbitmq:
+    container_name: rabbitmq
+    build: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
